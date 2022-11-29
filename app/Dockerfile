@@ -4,7 +4,7 @@ FROM python:3.10
 ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app/app
-COPY app/requirements.txt ./
+COPY app/requirements.txt ./app
 
 RUN python -m pip install --upgrade pip
 
