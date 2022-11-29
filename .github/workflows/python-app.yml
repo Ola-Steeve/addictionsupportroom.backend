@@ -88,4 +88,4 @@ jobs:
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/soberpal.backend:latest
           sudo docker run -d -p 8000:8000 --name backend ${{ secrets.DOCKER_USERNAME }}/soberpal.backend:latest
           sudo docker system prune -af
-          sudo docker builder prune -af && exit"
+          sudo docker builder prune -af
