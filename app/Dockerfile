@@ -3,8 +3,8 @@ FROM python:3.10
 
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /app
-COPY app/requirements.txt ./
+WORKDIR /app/app
+COPY requirements.txt ./
 
 RUN python -m pip install --upgrade pip
 
