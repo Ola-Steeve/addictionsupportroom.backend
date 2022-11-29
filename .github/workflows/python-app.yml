@@ -82,5 +82,10 @@ jobs:
         script: |
           whoami
           cd /home/ubuntu
+          sudo docker stop backend
+          sudo docker rm  backend
+          sudo docker rmi -f ${{ secrets.DOCKER_USERNAME }}/soberpal.backend:latest 
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/soberpal.backend:latest
-          sudo docker run -d -p 8000:8000 ${{ secrets.DOCKER_USERNAME }}/soberpal.backend:latest
+          sudo docker run -d -p 8000:8000 --name backend ${{ secrets.DOCKER_USERNAME }}/soberpal.backend:latest
+          sudo docker system prune -af
+          sudo docker builder prune -af && exit"
